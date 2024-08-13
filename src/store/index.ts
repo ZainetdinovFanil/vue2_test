@@ -152,7 +152,6 @@ const store: StoreOptions<State> = {
       })
       .catch((error) => {
         commit('setCanAuth', true);
-        console.log(error.response);
         
         let err='Неверный логин или пароль'
         if (error.response?.data?.data?.non_field_errors) {
@@ -217,8 +216,8 @@ const store: StoreOptions<State> = {
           },
           description: data.description,
           due_date: data.due_date,
-          /* status: "Новая",
-          status_id: 1 */
+          /* status: "Новая", */
+          status_id: 1,
           status: {full_details
             : 
             "Просрочена на 2 дн",

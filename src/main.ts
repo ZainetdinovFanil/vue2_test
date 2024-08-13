@@ -3,7 +3,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './assets/global.sass'; // Импортируйте глобальный SCSS файл
+import './assets/global.sass';
 
 // @ts-ignore
 import DatePicker from 'vue2-datepicker';
@@ -11,7 +11,7 @@ import DatePicker from 'vue2-datepicker';
 
 Vue.config.productionTip = false
 
-Vue.component('DatePicker', DatePicker); // Регистрация компонента глобально
+Vue.component('DatePicker', DatePicker);
 
 new Vue({
   router,

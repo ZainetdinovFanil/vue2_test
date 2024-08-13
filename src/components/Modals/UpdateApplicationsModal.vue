@@ -14,7 +14,7 @@
           convertISODateToDMY(data.created_at) +
           ')'
         "
-        :status="data.name"
+        :status="data.status.name"
         :data-info="getApplications"
         @updateData="updateData"
       ></DefaultApplicationsModal>
@@ -130,10 +130,9 @@ export default Vue.extend({
     ...mapMutations(["setErrorMainapplicationsUpdate"]),
     ...mapActions(["mainapplicationsUpdateAction"]),
     updateAppeal() {
-      console.log(this.formData);
-      /* console.log(this.convertDateFormat(this.formData.date)); */
-
       this.mainapplicationsUpdateAction({
+          number: this.data.number,
+          created_at: this.data.created_at,
           premise_id: this.formData.premise.id,
           apartment_id: this.formData.apartment.id,
             last_name: this.formData.lastName,
@@ -142,7 +141,7 @@ export default Vue.extend({
             username: this.formData.phone,
           description: this.formData.description,
           due_date: this.formData.date?this.convertDateFormat(this.formData.date):null,
-          status: this.data.name
+          status: this.data.status
         })
       /* this.$emit("closeModal"); */
     },
@@ -167,7 +166,6 @@ export default Vue.extend({
       const year = date.getFullYear();
       const hours = String(date.getHours()).padStart(2, "0");
       const minutes = String(date.getMinutes()).padStart(2, "0");
-      console.log(day, month, year, hours, minutes);
 
       return `${day}.${month}.${year} ${hours}:${minutes}`;
     },

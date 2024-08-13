@@ -356,7 +356,6 @@ export default Vue.extend({
       this.showUpdateModal = !this.showUpdateModal;
     },
     openUpdateModal(data: object) {
-      console.log(data);
       this.updateDataModal = data;
       this.toggleUpdateModal();
     },

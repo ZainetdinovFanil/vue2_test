@@ -118,7 +118,8 @@ export default Vue.extend({
         due_date: this.formData.date
           ? this.convertDateFormat(this.formData.date)
           : null,
-        status_id: 1,
+        status_id: 1, //ошибка?
+        status: 'Новая'
       });
     },
     updateData(data: ApplicationData): void {
