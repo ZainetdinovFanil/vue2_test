@@ -1,0 +1,53 @@
+<template>
+  <div id="app">
+    <div class="container" :class="{ login: $route.path === '/login' }">
+      <router-view />
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+html,
+body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 0 15px;
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  &.login {
+    max-width: 100vw;
+    background-image: url("@/assets/auth.jpeg");
+  }
+}
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
